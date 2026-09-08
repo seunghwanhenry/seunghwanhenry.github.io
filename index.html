@@ -69,7 +69,53 @@
 
     <hr>
 
-    <h2>3. 링크 실습</h2>
+    <h2>3. class 속성 실습</h2>
+
+    <p>
+        아래 목록에서는 일부 li 태그에 class="course"가 적용되어 있습니다.
+    </p>
+
+    <ul>
+        <li class="course">Python</li>
+        <li class="course">HTML</li>
+        <li class="course">CSS</li>
+        <li>JavaScript</li>
+        <li>Git</li>
+    </ul>
+
+    <p class="course">
+        이 문장도 class="course"가 적용된 p 태그입니다.
+    </p>
+
+    <!--
+        class 속성 실습
+
+        class="course"
+        → course라는 이름의 class를 가진 요소
+
+        크롤링 예제:
+
+        soup.select('.course')
+        → 태그 종류와 관계없이
+          class="course"인 모든 요소 선택
+
+        soup.select('li.course')
+        → li 태그이면서
+          class="course"인 요소만 선택
+    -->
+
+    <h3>class 실습 미션</h3>
+
+    <ol>
+        <li>JavaScript 항목에도 class="course"를 추가해보기</li>
+        <li>Python의 class="course"를 삭제해보기</li>
+        <li>p 태그에 적용된 class="course"를 확인해보기</li>
+        <li>개발자 도구(F12)에서 class 속성을 직접 확인해보기</li>
+    </ol>
+
+    <hr>
+
+    <h2>4. 링크 실습</h2>
 
     <a href="https://www.google.com">
         Google로 이동
@@ -81,7 +127,7 @@
 
     <hr>
 
-    <h2>4. 버튼 실습</h2>
+    <h2>5. 버튼 실습</h2>
 
     <button>
         클릭
@@ -89,7 +135,7 @@
 
     <hr>
 
-    <h2>5. 표(Table) 실습</h2>
+    <h2>6. 표(Table) 실습</h2>
 
     <p>
         아래 표의 내용과 속성을 직접 수정해보세요.
