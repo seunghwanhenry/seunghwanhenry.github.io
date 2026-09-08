@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HTML 태그 실습</title>
 </head>
+
 <body>
 
     <h1>HTML 태그 실습 페이지</h1>
@@ -29,7 +30,9 @@
         이 문장에는 <mark>강조 표시</mark>가 들어 있습니다.
     </p>
 
+
     <hr>
+
 
     <h2>1. 직접 수정해보기</h2>
 
@@ -43,19 +46,26 @@
 
     <!--
         예시:
+
         <b>    → 굵은 글씨
         <i>    → 기울임 글씨
         <u>    → 밑줄
         <mark> → 형광펜 효과
 
         예)
+
         <b>안녕하세요</b>
+
         를
+
         <i>안녕하세요</i>
+
         로 바꿔보세요.
     -->
 
+
     <hr>
+
 
     <h2>2. 목록 실습</h2>
 
@@ -65,44 +75,76 @@
         <li>JavaScript</li>
     </ul>
 
-    <p>아래 ul을 ol로 바꿔보세요.</p>
+    <p>
+        위의 ul을 ol로 바꿔보세요.
+    </p>
+
 
     <hr>
+
 
     <h2>3. class 속성 실습</h2>
 
     <p>
-        아래 목록에서는 일부 li 태그에 class="course"가 적용되어 있습니다.
+        아래 목록에서는 일부 li 태그에
+        class="course"가 적용되어 있습니다.
     </p>
 
     <ul>
-        <li class="course">Python</li>
-        <li class="course">HTML</li>
-        <li class="course">CSS</li>
-        <li>JavaScript</li>
-        <li>Git</li>
+
+        <li class="course">
+            Python
+        </li>
+
+        <li class="course">
+            HTML
+        </li>
+
+        <li class="course">
+            CSS
+        </li>
+
+        <li>
+            JavaScript
+        </li>
+
+        <li>
+            Git
+        </li>
+
     </ul>
+
 
     <p class="course">
         이 문장도 class="course"가 적용된 p 태그입니다.
     </p>
 
+
     <!--
-        class 속성 실습
 
-        class="course"
-        → course라는 이름의 class를 가진 요소
+        [초간단 예제 4]
 
-        크롤링 예제:
+        class 선택하기
+
 
         soup.select('.course')
+
         → 태그 종류와 관계없이
-          class="course"인 모든 요소 선택
+          class="course"인 요소를 모두 선택
+
 
         soup.select('li.course')
+
         → li 태그이면서
           class="course"인 요소만 선택
+
+
+        CSS Selector에서
+
+        . = class
+
     -->
+
 
     <h3>class 실습 미션</h3>
 
@@ -110,12 +152,169 @@
         <li>JavaScript 항목에도 class="course"를 추가해보기</li>
         <li>Python의 class="course"를 삭제해보기</li>
         <li>p 태그에 적용된 class="course"를 확인해보기</li>
-        <li>개발자 도구(F12)에서 class 속성을 직접 확인해보기</li>
+        <li>개발자 도구(F12)에서 class 속성을 확인해보기</li>
     </ol>
+
 
     <hr>
 
-    <h2>4. 링크 실습</h2>
+
+    <h2>4. id 속성 실습</h2>
+
+    <p>
+        이번에는 각 항목을 구분하기 위해 id 속성을 추가해보겠습니다.
+    </p>
+
+
+    <ul>
+
+        <li id="start">
+            Python 기초
+        </li>
+
+        <li id="middle">
+            데이터 전처리
+        </li>
+
+        <li id="advance">
+            데이터 시각화
+        </li>
+
+    </ul>
+
+
+    <!--
+
+        [초간단 예제 5]
+
+        id 선택하기
+
+
+        soup.select('#start')
+
+        → id="start"인 요소 선택
+
+
+        soup.select('li#start')
+
+        → li 태그이면서
+          id="start"인 요소 선택
+
+
+        CSS Selector에서
+
+        # = id
+
+    -->
+
+
+    <h3>id 실습 미션</h3>
+
+    <ol>
+        <li>id="start"가 적용된 태그를 찾아보기</li>
+        <li>start를 beginner로 바꿔보기</li>
+        <li>개발자 도구에서 id 속성을 확인해보기</li>
+    </ol>
+
+
+    <hr>
+
+
+    <h2>5. 복합 Selector 실습</h2>
+
+    <p>
+        이번에는 태그, id, class를 함께 사용해보겠습니다.
+    </p>
+
+
+    <ul id="course_list">
+
+        <li id="start" class="course">
+            Python 기초
+        </li>
+
+        <li id="preprocess" class="course">
+            데이터 전처리
+        </li>
+
+        <li id="visualization" class="course">
+            데이터 시각화
+        </li>
+
+    </ul>
+
+
+    <ul id="other_list">
+
+        <li id="start_other" class="course">
+            Git 기초
+        </li>
+
+        <li class="course">
+            협업 도구
+        </li>
+
+    </ul>
+
+
+    <!--
+
+        [초간단 예제 6]
+
+        여러 조건을 조합하여 선택하기
+
+
+        soup.select('ul#course_list')
+
+        → ul 태그 중
+          id="course_list"인 요소 선택
+
+
+        soup.select('ul#course_list li')
+
+        → id="course_list"인 ul 내부의
+          모든 li 태그 선택
+
+
+        soup.select('ul#course_list li.course')
+
+        → id="course_list"인 ul 내부에서
+          class="course"인 li 태그 선택
+
+
+        soup.select('ul#course_list li#start')
+
+        → id="course_list"인 ul 내부에서
+          id="start"인 li 태그 선택
+
+
+        왼쪽부터 읽으면 됩니다.
+
+        ul#course_list
+        → id가 course_list인 ul
+
+        li#start
+        → 그 안에 있는
+          id가 start인 li
+
+    -->
+
+
+    <h3>복합 Selector 실습 미션</h3>
+
+    <ol>
+        <li>id="course_list"인 ul을 찾아보기</li>
+        <li>course_list 안의 모든 li를 찾아보기</li>
+        <li>course_list 안에서 class="course"인 li를 찾아보기</li>
+        <li>course_list 안에서 id="start"인 li를 찾아보기</li>
+        <li>other_list와 결과를 비교해보기</li>
+    </ol>
+
+
+    <hr>
+
+
+    <h2>6. 링크 실습</h2>
 
     <a href="https://www.google.com">
         Google로 이동
@@ -125,46 +324,59 @@
         href 안의 주소를 다른 사이트 주소로 바꿔보세요.
     </p>
 
+
     <hr>
 
-    <h2>5. 버튼 실습</h2>
+
+    <h2>7. 버튼 실습</h2>
 
     <button>
         클릭
     </button>
 
+
     <hr>
 
-    <h2>6. 표(Table) 실습</h2>
+
+    <h2>8. 표(Table) 실습</h2>
 
     <p>
         아래 표의 내용과 속성을 직접 수정해보세요.
     </p>
 
-    <table border="1" style="border-collapse: collapse;">
+
+    <table border="1"
+           style="border-collapse: collapse;">
+
         <tr>
             <th>이름</th>
             <th>학년</th>
             <th>점수</th>
         </tr>
+
         <tr>
             <td>김학생</td>
             <td>2학년</td>
             <td>90</td>
         </tr>
+
         <tr>
             <td>이학생</td>
             <td>3학년</td>
             <td>85</td>
         </tr>
+
         <tr>
             <td>박학생</td>
             <td>1학년</td>
             <td>95</td>
         </tr>
+
     </table>
 
+
     <!--
+
         표 관련 태그
 
         <table> : 표 전체
@@ -172,14 +384,18 @@
         <th>    : 제목 셀
         <td>    : 일반 셀
 
+
         속성 실습
 
         border="1"
         → 표 테두리 두께
 
+
         style="border-collapse: collapse;"
         → 셀 사이의 테두리를 하나로 합침
+
     -->
+
 
     <h3>표 실습 미션</h3>
 
@@ -188,8 +404,9 @@
         <li>학생 한 명을 추가해보기</li>
         <li>점수 열의 값을 변경해보기</li>
         <li>새로운 열 "전공"을 추가해보기</li>
-        <li>style="border-collapse: collapse;"를 삭제하고 차이를 확인해보기</li>
+        <li>border-collapse를 삭제하고 차이를 확인해보기</li>
     </ol>
+
 
 </body>
 </html>
